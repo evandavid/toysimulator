@@ -1,8 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Dimensions, SafeAreaView, ScrollView, View} from 'react-native';
 import styled from 'styled-components';
 import Block from './components/Block';
-import Robot, {RobotFacing, SCALE, IMAGE_PADDING} from './components/Robot';
+import Robot, {
+  RobotFacing,
+  SCALE,
+  IMAGE_PADDING,
+  MOVE_DURATION,
+} from './components/Robot';
 import {calculateBlockCenterPositions, chunk} from './util';
 
 const CONTAINER_PADDING = 12;
@@ -29,6 +34,7 @@ const App = () => {
   const imageContainerSize = imageSize + CONTAINER_PADDING;
 
   const [robotFacing, setRobotFacing] = useState<RobotFacing>('EAST');
+  const [currentPosition, setCurrentPosition] = useState({row: 0, col: 0});
 
   const allPosition = calculateBlockCenterPositions(
     blockWidth,
@@ -36,6 +42,15 @@ const App = () => {
   );
 
   const matrixPosition = chunk(allPosition, 5).reverse();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCurrentPosition({col: 4, row: 4});
+      setTimeout(() => {
+        setRobotFacing('WEST');
+      }, MOVE_DURATION);
+    }, 1000);
+  }, []);
 
   return (
     <SafeAreaView>
@@ -59,7 +74,9 @@ const App = () => {
             imageSize={imageSize}
             imageContainerSize={imageContainerSize}
             totalImageSizeWithPadding={imageSize + IMAGE_PADDING * SCALE}
-            parentPosition={matrixPosition[1][4]}
+            parentPosition={
+              matrixPosition[currentPosition.row][currentPosition.col]
+            }
           />
         </Content>
       </ScrollView>

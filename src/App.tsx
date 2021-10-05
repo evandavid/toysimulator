@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
   Dimensions,
   SafeAreaView,
@@ -10,6 +10,8 @@ import {
 import Actions from './components/Actions';
 import Block from './components/Block';
 import CommandListView from './components/CommandListView';
+import OutputView from './components/Output';
+import PlaceForm from './components/PlaceForm';
 import Robot, {
   RobotFacing,
   SCALE,
@@ -29,10 +31,14 @@ import {
 import {
   ACTION,
   ACTIONS,
+  ROBOT_POSITION,
   calculateBlockCenterPositions,
   chunk,
+  isEqual,
+  isValidAction,
   isValidOtherAction,
   isValidToExecute,
+  getNextMovePosition,
 } from './util';
 
 const CONTAINER_PADDING = 12;
@@ -45,22 +51,17 @@ const App = () => {
   const imageContainerSize = imageSize + CONTAINER_PADDING;
 
   const [executing, setExecuting] = useState<boolean>(false);
-  const [robotFacing, setRobotFacing] = useState<RobotFacing>('EAST');
-  const [currentPosition, setCurrentPosition] = useState({row: 0, col: 0});
+  const [showPlaceForm, setPlaceForm] = useState<boolean>(false);
+  const [currentPosition, setCurrentPosition] = useState<ROBOT_POSITION>({
+    row: 0,
+    col: 0,
+    f: 'SOUTH',
+  });
+  const [output, setOutput] = useState<ROBOT_POSITION[]>([]);
   const [commands, setCommands] = useState<ACTIONS>([]);
 
   const onAddPlace = () => {
-    setCommands([
-      ...commands,
-      {
-        type: 'PLACE',
-        extraData: {
-          row: 0,
-          col: 0,
-          f: 'WEST',
-        },
-      },
-    ]);
+    setPlaceForm(true);
   };
 
   const onBasicAction = (type: ACTION) => {
@@ -92,16 +93,82 @@ const App = () => {
     setCommands([]);
   };
 
-  const onExecute = async () => {};
+  const onExecute = async () => {
+    if (executing) {
+      return;
+    }
+    setOutput([]);
+    setExecuting(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setCurrentPosition({col: 4, row: 4});
-      setTimeout(() => {
-        setRobotFacing('WEST');
-      }, MOVE_DURATION);
-    }, 1000);
-  }, []);
+    let holder: ROBOT_POSITION = currentPosition;
+
+    for (let command of commands) {
+      const validAction = isValidAction(
+        command.type,
+        holder,
+        command?.extraData,
+      );
+      if (validAction) {
+        switch (command.type) {
+          case 'PLACE':
+            if (
+              command.extraData &&
+              !isEqual(command.extraData, currentPosition)
+            ) {
+              holder = command.extraData;
+              setCurrentPosition(holder);
+              await new Promise(resolve => {
+                setTimeout(() => {
+                  resolve(true);
+                }, MOVE_DURATION);
+              });
+            }
+            break;
+          case 'MOVE':
+            holder = getNextMovePosition(holder);
+            setCurrentPosition(holder);
+            await new Promise(resolve => {
+              setTimeout(() => {
+                resolve(true);
+              }, MOVE_DURATION);
+            });
+
+            break;
+          case 'LEFT':
+          case 'RIGHT':
+            let changeFacing: {[key: string]: RobotFacing} = {
+              NORTH: 'WEST',
+              WEST: 'SOUTH',
+              SOUTH: 'EAST',
+              EAST: 'NORTH',
+            };
+
+            if (command.type === 'RIGHT') {
+              changeFacing = {
+                NORTH: 'EAST',
+                EAST: 'SOUTH',
+                SOUTH: 'WEST',
+                WEST: 'NORTH',
+              };
+            }
+
+            holder = {
+              ...holder,
+              f: changeFacing[holder.f],
+            };
+
+            setCurrentPosition(holder);
+            break;
+          case 'REPORT':
+            setOutput(o => [...o, holder]);
+            break;
+        }
+      }
+    }
+
+    onClear();
+    setExecuting(false);
+  };
 
   const allPosition = calculateBlockCenterPositions(
     blockWidth,
@@ -129,7 +196,7 @@ const App = () => {
             ))}
 
             <Robot
-              facing={robotFacing}
+              facing={currentPosition.f}
               imageSize={imageSize}
               imageContainerSize={imageContainerSize}
               totalImageSizeWithPadding={imageSize + IMAGE_PADDING * SCALE}
@@ -169,12 +236,24 @@ const App = () => {
             <Col>
               <IOContainer>
                 <Text>Output</Text>
-                <IOScreen></IOScreen>
+                <IOScreen>
+                  <OutputView data={output} />
+                </IOScreen>
               </IOContainer>
             </Col>
           </Row>
         </View>
       </ScrollView>
+      <PlaceForm
+        visible={showPlaceForm}
+        onRequestClose={() => {
+          setPlaceForm(false);
+        }}
+        onSubmit={extraData => {
+          setCommands(o => [...o, {type: 'PLACE', extraData}]);
+          setPlaceForm(false);
+        }}
+      />
     </SafeAreaView>
   );
 };

@@ -30,8 +30,8 @@ const Robot = ({
   const position = {
     NORTH: -totalImageSizeWithPadding * 3,
     EAST: -totalImageSizeWithPadding,
-    WEST: -totalImageSizeWithPadding * 2,
-    SOUTH: 0,
+    WEST: 0,
+    SOUTH: -totalImageSizeWithPadding * 2,
   };
 
   useEffect(() => {

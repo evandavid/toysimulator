@@ -1,4 +1,4 @@
-import {View, Image as RNImage, Animated, Text} from 'react-native';
+import {View, Image as RNImage, Animated, Text, TextInput} from 'react-native';
 import styled from 'styled-components';
 
 export const SCALE = 0.6;
@@ -35,4 +35,71 @@ const CommandText = styled(Text)`
   font-size: 12px;
 `;
 
-export {ImageContainer, Image, BlockWrapper, CommandText};
+const PlaceFormOuterContainer = styled(View)`
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+`;
+
+const PlaceFormContainer = styled(View)`
+  width: 300px;
+  height: 300px;
+  background: #fff;
+  border-radius: 6px;
+`;
+
+const Overlay = styled(View)`
+  background: rgba(0, 0, 0, 0.22);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
+
+const Input = styled(TextInput)`
+  height: 40px;
+  margin: 0 12px;
+  border-width: 1px;
+  padding: 10px;
+  border-color: #888;
+  border-radius: 3px;
+`;
+
+const Label = styled(Text)`
+  margin-left: 12px;
+  margin-top: 12px;
+`;
+
+const RadioOuter = styled(View)`
+  width: 16px;
+  height: 16px;
+  border: 1px solid #212121;
+  border-radius: 8px;
+  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+`;
+
+const RadioInner = styled(View)`
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: #212121;
+`;
+
+export {
+  ImageContainer,
+  Image,
+  BlockWrapper,
+  CommandText,
+  PlaceFormContainer,
+  PlaceFormOuterContainer,
+  Overlay,
+  Input,
+  Label,
+  RadioOuter,
+  RadioInner,
+};

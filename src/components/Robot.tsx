@@ -1,37 +1,14 @@
 import React, {useRef, useEffect} from 'react';
-import {Image as RNImage, View, Animated} from 'react-native';
-import styled from 'styled-components';
+import {View, Animated} from 'react-native';
+import {ImageContainer, Image, MOVE_DURATION} from './styled';
 
-export const SCALE = 0.6;
-export const IMAGE_PADDING = 24;
-export const MOVE_DURATION = 500;
-const IMAGE_TOTAL = 4;
-
-const ImageContainer = styled(Animated.View)<{
-  size: number;
-  parentPosition: {x: number; y: number};
-}>`
-  width: ${props => props.size}px;
-  height: ${props => props.size}px;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
-  position: absolute;
-`;
-
-const Image = styled(RNImage)<{size: number; marginTop: number}>`
-  width: ${props => props.size}px;
-  height: ${props => (props.size + IMAGE_PADDING * SCALE) * IMAGE_TOTAL}px;
-  margin-top: ${props => props.marginTop}px;
-`;
-
-export type RobotFacing = 'NORTH' | 'EAST' | 'WEST' | 'SOUTH';
+type _RobotFacing = 'NORTH' | 'EAST' | 'WEST' | 'SOUTH';
 
 type RobotProps = {
   imageSize: number;
   imageContainerSize: number;
   totalImageSizeWithPadding: number;
-  facing: RobotFacing;
+  facing: _RobotFacing;
   parentPosition: {
     x: number;
     y: number;
@@ -90,3 +67,5 @@ const Robot = ({
 };
 
 export default Robot;
+export {SCALE, IMAGE_PADDING, MOVE_DURATION} from './styled';
+export type RobotFacing = _RobotFacing;

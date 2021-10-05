@@ -1,12 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
-import styled from 'styled-components';
-
-const BlockWrapper = styled(View)<{color?: string; height: number}>`
-  width: 100%;
-  height: ${props => props.height}px;
-  background-color: ${props => props.color};
-`;
+import {BlockWrapper} from './styled';
 
 type BlockProps = {
   index: number;

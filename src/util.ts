@@ -1,3 +1,5 @@
+import type {RobotFacing} from './components/Robot';
+
 const calculateBlockCenterPositions = (
   blockSize: number,
   imageSize: number,
@@ -27,4 +29,26 @@ const chunk = (list: any[], chunkSize = 10) => {
   return chunks;
 };
 
-export {calculateBlockCenterPositions, chunk};
+type ACTION = 'MOVE' | 'PLACE' | 'LEFT' | 'RIGHT' | 'REPORT';
+
+type ACTIONS = {
+  type: ACTION;
+  extraData?: {row: number; col: number; f: RobotFacing};
+}[];
+
+const isValidOtherAction = (commands: ACTIONS): boolean => {
+  return commands.find(o => o.type === 'PLACE') !== undefined;
+};
+
+const isValidToExecute = (commands: ACTIONS): boolean => {
+  return commands.length > 0;
+};
+
+export {
+  calculateBlockCenterPositions,
+  chunk,
+  isValidOtherAction,
+  isValidToExecute,
+};
+// eslint-disable-next-line no-undef
+export type {ACTION, ACTIONS};

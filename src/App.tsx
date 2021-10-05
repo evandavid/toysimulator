@@ -1,6 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {Dimensions, SafeAreaView, ScrollView, View} from 'react-native';
-import styled from 'styled-components';
+import {
+  Dimensions,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  View,
+  TouchableWithoutFeedback,
+} from 'react-native';
+import Actions from './components/Actions';
 import Block from './components/Block';
 import Robot, {
   RobotFacing,
@@ -8,23 +15,25 @@ import Robot, {
   IMAGE_PADDING,
   MOVE_DURATION,
 } from './components/Robot';
-import {calculateBlockCenterPositions, chunk} from './util';
+import {
+  Content,
+  Wrapper,
+  Row,
+  IOScreen,
+  Col,
+  ButtonText,
+  IOContainer,
+  ExecuteButton,
+} from './styled';
+import {
+  ACTIONS,
+  calculateBlockCenterPositions,
+  chunk,
+  isValidOtherAction,
+  isValidToExecute,
+} from './util';
 
 const CONTAINER_PADDING = 12;
-
-const Content = styled(View)`
-  position: relative;
-`;
-
-const Row = styled(View)`
-  flex-direction: row;
-  padding: 0 1px;
-`;
-
-const Wrapper = styled(View)`
-  flex: 1;
-`;
-
 const screenWidth = Dimensions.get('window').width;
 
 const App = () => {
@@ -33,15 +42,32 @@ const App = () => {
   const imageSize = blockWidth * SCALE;
   const imageContainerSize = imageSize + CONTAINER_PADDING;
 
+  const [executing, setExecuting] = useState<boolean>(false);
   const [robotFacing, setRobotFacing] = useState<RobotFacing>('EAST');
   const [currentPosition, setCurrentPosition] = useState({row: 0, col: 0});
+  const [commands, setCommands] = useState<ACTIONS>([]);
 
-  const allPosition = calculateBlockCenterPositions(
-    blockWidth,
-    imageContainerSize,
-  );
+  const onAddPlace = () => {
+    setCommands([
+      ...commands,
+      {
+        type: 'PLACE',
+        extraData: {
+          row: 0,
+          col: 0,
+          f: 'WEST',
+        },
+      },
+    ]);
+  };
 
-  const matrixPosition = chunk(allPosition, 5).reverse();
+  const onAddMove = () => {};
+
+  const onAddLeft = () => {};
+
+  const onAddRight = () => {};
+
+  const onAddReport = () => {};
 
   useEffect(() => {
     setTimeout(() => {
@@ -52,33 +78,73 @@ const App = () => {
     }, 1000);
   }, []);
 
+  const allPosition = calculateBlockCenterPositions(
+    blockWidth,
+    imageContainerSize,
+  );
+  const matrixPosition = chunk(allPosition, 5).reverse();
+  const validForOtherAction = isValidOtherAction(commands);
+
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Content>
-          {arrayBlock.map((_, rowIndex) => (
-            <Row key={rowIndex}>
-              {arrayBlock.map((__, colIndex) => (
-                <Wrapper key={`${rowIndex}-${colIndex}`}>
-                  <Block
-                    height={blockWidth}
-                    index={rowIndex * arrayBlock.length + colIndex}
-                  />
-                </Wrapper>
-              ))}
-            </Row>
-          ))}
+        <View>
+          <Content>
+            {arrayBlock.map((_, rowIndex) => (
+              <Row key={rowIndex}>
+                {arrayBlock.map((__, colIndex) => (
+                  <Wrapper key={`${rowIndex}-${colIndex}`}>
+                    <Block
+                      height={blockWidth}
+                      index={rowIndex * arrayBlock.length + colIndex}
+                    />
+                  </Wrapper>
+                ))}
+              </Row>
+            ))}
 
-          <Robot
-            facing={robotFacing}
-            imageSize={imageSize}
-            imageContainerSize={imageContainerSize}
-            totalImageSizeWithPadding={imageSize + IMAGE_PADDING * SCALE}
-            parentPosition={
-              matrixPosition[currentPosition.row][currentPosition.col]
-            }
-          />
-        </Content>
+            <Robot
+              facing={robotFacing}
+              imageSize={imageSize}
+              imageContainerSize={imageContainerSize}
+              totalImageSizeWithPadding={imageSize + IMAGE_PADDING * SCALE}
+              parentPosition={
+                matrixPosition[currentPosition.row][currentPosition.col]
+              }
+            />
+          </Content>
+          <Row>
+            <Col>
+              <IOContainer>
+                <Text>Commands</Text>
+                <IOScreen></IOScreen>
+                <Actions
+                  onAddPlace={onAddPlace}
+                  onAddMove={onAddMove}
+                  onAddLeft={onAddLeft}
+                  onAddRight={onAddRight}
+                  onAddReport={onAddReport}
+                  validForOtherAction={validForOtherAction}
+                />
+              </IOContainer>
+              <View style={{width: 120, marginTop: 12}}>
+                <TouchableWithoutFeedback
+                  disabled={executing || !isValidToExecute(commands)}>
+                  <ExecuteButton
+                    disabled={executing || !isValidToExecute(commands)}>
+                    <ButtonText>Execute</ButtonText>
+                  </ExecuteButton>
+                </TouchableWithoutFeedback>
+              </View>
+            </Col>
+            <Col>
+              <IOContainer>
+                <Text>Output</Text>
+                <IOScreen></IOScreen>
+              </IOContainer>
+            </Col>
+          </Row>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

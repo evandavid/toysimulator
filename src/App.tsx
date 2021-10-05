@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
 import {
   Dimensions,
@@ -42,7 +43,7 @@ import {
 } from './util';
 
 const CONTAINER_PADDING = 12;
-const screenWidth = Dimensions.get('window').width;
+const {width: screenWidth, height: screenHeight} = Dimensions.get('window');
 
 const App = () => {
   const arrayBlock = new Array(5).fill(1);
@@ -178,9 +179,9 @@ const App = () => {
   const validForOtherAction = isValidOtherAction(commands);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: '#fff'}}>
       <ScrollView>
-        <View>
+        <View style={{backgroundColor: '#fff', minHeight: screenHeight}}>
           <Content>
             {arrayBlock.map((_, rowIndex) => (
               <Row key={rowIndex}>
@@ -208,7 +209,7 @@ const App = () => {
           <Row>
             <Col>
               <IOContainer>
-                <Text>Commands</Text>
+                <Text style={{color: ' #212121'}}>Commands</Text>
                 <IOScreen>
                   <CommandListView commands={commands} />
                 </IOScreen>
@@ -235,7 +236,7 @@ const App = () => {
             </Col>
             <Col>
               <IOContainer>
-                <Text>Output</Text>
+                <Text style={{color: ' #212121'}}>Output</Text>
                 <IOScreen>
                   <OutputView data={output} />
                 </IOScreen>

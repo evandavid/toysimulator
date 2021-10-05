@@ -66,11 +66,13 @@ const Input = styled(TextInput)`
   padding: 10px;
   border-color: #888;
   border-radius: 3px;
+  color: #212121;
 `;
 
 const Label = styled(Text)`
   margin-left: 12px;
   margin-top: 12px;
+  color: #212121;
 `;
 
 const RadioOuter = styled(View)`

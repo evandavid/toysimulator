@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import Actions from './components/Actions';
 import Block from './components/Block';
+import CommandListView from './components/CommandListView';
 import Robot, {
   RobotFacing,
   SCALE,
@@ -26,6 +27,7 @@ import {
   ExecuteButton,
 } from './styled';
 import {
+  ACTION,
   ACTIONS,
   calculateBlockCenterPositions,
   chunk,
@@ -61,13 +63,36 @@ const App = () => {
     ]);
   };
 
-  const onAddMove = () => {};
+  const onBasicAction = (type: ACTION) => {
+    setCommands([
+      ...commands,
+      {
+        type,
+      },
+    ]);
+  };
 
-  const onAddLeft = () => {};
+  const onAddMove = () => {
+    onBasicAction('MOVE');
+  };
 
-  const onAddRight = () => {};
+  const onAddLeft = () => {
+    onBasicAction('LEFT');
+  };
 
-  const onAddReport = () => {};
+  const onAddRight = () => {
+    onBasicAction('RIGHT');
+  };
+
+  const onAddReport = () => {
+    onBasicAction('REPORT');
+  };
+
+  const onClear = () => {
+    setCommands([]);
+  };
+
+  const onExecute = async () => {};
 
   useEffect(() => {
     setTimeout(() => {
@@ -87,7 +112,7 @@ const App = () => {
 
   return (
     <SafeAreaView>
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
+      <ScrollView>
         <View>
           <Content>
             {arrayBlock.map((_, rowIndex) => (
@@ -117,22 +142,26 @@ const App = () => {
             <Col>
               <IOContainer>
                 <Text>Commands</Text>
-                <IOScreen></IOScreen>
+                <IOScreen>
+                  <CommandListView commands={commands} />
+                </IOScreen>
                 <Actions
                   onAddPlace={onAddPlace}
                   onAddMove={onAddMove}
                   onAddLeft={onAddLeft}
                   onAddRight={onAddRight}
                   onAddReport={onAddReport}
+                  onClear={onClear}
                   validForOtherAction={validForOtherAction}
                 />
               </IOContainer>
-              <View style={{width: 120, marginTop: 12}}>
+              <View style={{width: 120, marginTop: 12, height: 36}}>
                 <TouchableWithoutFeedback
+                  onPress={onExecute}
                   disabled={executing || !isValidToExecute(commands)}>
                   <ExecuteButton
                     disabled={executing || !isValidToExecute(commands)}>
-                    <ButtonText>Execute</ButtonText>
+                    <ButtonText>EXECUTE</ButtonText>
                   </ExecuteButton>
                 </TouchableWithoutFeedback>
               </View>

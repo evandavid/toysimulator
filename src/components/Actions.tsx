@@ -8,6 +8,7 @@ type ActionsProps = {
   onAddLeft: () => void;
   onAddRight: () => void;
   onAddReport: () => void;
+  onClear: () => void;
   validForOtherAction: boolean;
 };
 
@@ -17,10 +18,11 @@ const Actions = ({
   onAddLeft,
   onAddRight,
   onAddReport,
+  onClear,
   validForOtherAction,
 }: ActionsProps) => {
   return (
-    <View>
+    <View style={{height: 105}}>
       <Row>
         <TouchableWithoutFeedback onPress={onAddPlace}>
           <AsButton>
@@ -51,13 +53,20 @@ const Actions = ({
           </AsButton>
         </TouchableWithoutFeedback>
       </Row>
-      <TouchableWithoutFeedback
-        onPress={onAddReport}
-        disabled={!validForOtherAction}>
-        <AsButton disabled={!validForOtherAction}>
-          <ButtonText>REPORT</ButtonText>
-        </AsButton>
-      </TouchableWithoutFeedback>
+      <Row>
+        <TouchableWithoutFeedback
+          onPress={onAddReport}
+          disabled={!validForOtherAction}>
+          <AsButton disabled={!validForOtherAction}>
+            <ButtonText>REPORT</ButtonText>
+          </AsButton>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={onClear}>
+          <AsButton style={{backgroundColor: '#3D5866'}}>
+            <ButtonText>CLEAR</ButtonText>
+          </AsButton>
+        </TouchableWithoutFeedback>
+      </Row>
     </View>
   );
 };

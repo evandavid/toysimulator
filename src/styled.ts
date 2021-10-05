@@ -20,8 +20,7 @@ const Col = styled(View)`
 
 const IOContainer = styled(View)`
   margin-top: 12px;
-  width: 100%;
-  min-height: 100px;
+  width: 100%
   background-color: #e6e6e6;
   border-radius: 6px;
   padding: 6px;
@@ -39,7 +38,7 @@ const IOScreen = styled(View)`
 
 const AsButton = styled(View)<{disabled?: boolean}>`
   background: ${props => (props.disabled ? '#bbb' : '#a4c936')};
-  padding: 6px 12px;
+  padding: 6px;
   flex: 1;
   margin: 3px 6px;
   border-radius: 3px;
@@ -51,6 +50,9 @@ const ExecuteButton = styled(AsButton)<{disabled?: boolean}>`
 
 const ButtonText = styled(Text)`
   color: #fff;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 500;
 `;
 
 export {

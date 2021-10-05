@@ -1,4 +1,4 @@
-import {View, Image as RNImage, Animated} from 'react-native';
+import {View, Image as RNImage, Animated, Text} from 'react-native';
 import styled from 'styled-components';
 
 export const SCALE = 0.6;
@@ -30,4 +30,9 @@ const BlockWrapper = styled(View)<{color?: string; height: number}>`
   background-color: ${props => props.color};
 `;
 
-export {ImageContainer, Image, BlockWrapper};
+const CommandText = styled(Text)`
+  color: #fff;
+  font-size: 12px;
+`;
+
+export {ImageContainer, Image, BlockWrapper, CommandText};

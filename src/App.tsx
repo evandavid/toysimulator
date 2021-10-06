@@ -175,7 +175,7 @@ const App = () => {
     blockWidth,
     imageContainerSize,
   );
-  const matrixPosition = chunk(allPosition, 5).reverse();
+  const matrixPosition = chunk(allPosition, 5)?.reverse();
   const validForOtherAction = isValidOtherAction(commands);
 
   return (
@@ -202,6 +202,7 @@ const App = () => {
               imageContainerSize={imageContainerSize}
               totalImageSizeWithPadding={imageSize + IMAGE_PADDING * SCALE}
               parentPosition={
+                matrixPosition &&
                 matrixPosition[currentPosition.row][currentPosition.col]
               }
             />
@@ -209,7 +210,7 @@ const App = () => {
           <Row>
             <Col>
               <IOContainer>
-                <Text style={{color: ' #212121'}}>Commands</Text>
+                <Text style={{color: '#212121'}}>Commands</Text>
                 <IOScreen>
                   <CommandListView commands={commands} />
                 </IOScreen>
@@ -236,7 +237,7 @@ const App = () => {
             </Col>
             <Col>
               <IOContainer>
-                <Text style={{color: ' #212121'}}>Output</Text>
+                <Text style={{color: '#212121'}}>Output</Text>
                 <IOScreen>
                   <OutputView data={output} />
                 </IOScreen>

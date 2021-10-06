@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  className="sc-pGacB gBGhfQ"
+>
+  <View
+    className="sc-jrAFXE ktuycC"
+  />
+</View>
+`;
+
+exports[`renders correctly 2`] = `
+<View
+  className="sc-pGacB gBGhfQ"
+/>
+`;

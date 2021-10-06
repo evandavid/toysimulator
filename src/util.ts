@@ -19,7 +19,10 @@ const calculateBlockCenterPositions = (
   });
 };
 
-const chunk = (list: any[], chunkSize = 10) => {
+const chunk = (list: any[] | undefined, chunkSize = 10) => {
+  if (!list) {
+    return list;
+  }
   const cloned = [...list];
   const chunks = [];
   for (let i = 0; i < cloned.length; i += chunkSize) {
@@ -39,10 +42,16 @@ type ACTIONS = {
 }[];
 
 const isValidOtherAction = (commands: ACTIONS): boolean => {
-  return commands.find(o => o.type === 'PLACE') !== undefined;
+  if (!commands) {
+    return false;
+  }
+  return commands.findIndex(o => o.type === 'PLACE') === 0;
 };
 
 const isValidToExecute = (commands: ACTIONS): boolean => {
+  if (!commands) {
+    return false;
+  }
   return commands.length > 0;
 };
 
@@ -69,7 +78,7 @@ const isValidAction = (
       return true;
     case 'MOVE':
       if (
-        currentPosition.col > matrixSize &&
+        currentPosition.col > matrixSize ||
         currentPosition.row > matrixSize
       ) {
         return false;
@@ -102,7 +111,7 @@ const isValidAction = (
   return false;
 };
 
-const isEqual = (data1: object, data2: object): boolean => {
+const isEqual = (data1: any, data2: any): boolean => {
   return JSON.stringify(data1) === JSON.stringify(data2);
 };
 
@@ -113,16 +122,16 @@ const getNextMovePosition = (
 
   switch (currentPosition.f) {
     case 'EAST':
-      col = col + 1;
+      col = col === 4 ? col : col + 1;
       break;
     case 'WEST':
-      col = col - 1;
+      col = col === 0 ? col : col - 1;
       break;
     case 'NORTH':
-      row = row + 1;
+      row = row === 4 ? row : row + 1;
       break;
     case 'SOUTH':
-      row = row - 1;
+      row = row === 0 ? row : row - 1;
       break;
   }
   return {f: currentPosition.f, row, col};

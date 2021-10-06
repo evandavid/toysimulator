@@ -1,0 +1,531 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Modal
+  hardwareAccelerated={false}
+  onRequestClose={[Function]}
+  transparent={true}
+  visible={false}
+>
+  <View
+    className="sc-crrszt fWleXe"
+  >
+    <View
+      accessible={true}
+      className="sc-bqyKOL johKCT"
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    />
+    <View
+      className="sc-dQoVA eoKiZr"
+    >
+      <View>
+        <Text
+          className="sc-hBEYId jvKEGi"
+        >
+          X (Col)
+        </Text>
+        <TextInput
+          className="sc-kstqJO QsSFc"
+          keyboardType="number-pad"
+          onChangeText={[Function]}
+          placeholder="X value"
+          value="0"
+        />
+      </View>
+      <View>
+        <Text
+          className="sc-hBEYId jvKEGi"
+        >
+          Y (Row)
+        </Text>
+        <TextInput
+          className="sc-kstqJO QsSFc"
+          keyboardType="number-pad"
+          onChangeText={[Function]}
+          placeholder="Y value"
+          value="0"
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "margin": 12,
+            "marginBottom": 0,
+          }
+        }
+      >
+        <View
+          className="sc-gsTEea jwzyjw"
+        >
+          <View
+            accessible={true}
+            className="sc-gsTEea jwzyjw"
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "marginTop": 6,
+              }
+            }
+          >
+            <View
+              className="sc-fodVek ceasiC"
+            />
+            <Text
+              style={
+                Object {
+                  "color": "#212121",
+                }
+              }
+            >
+              NORTH
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            className="sc-gsTEea jwzyjw"
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "marginTop": 6,
+              }
+            }
+          >
+            <View
+              className="sc-fodVek ceasiC"
+            />
+            <Text
+              style={
+                Object {
+                  "color": "#212121",
+                }
+              }
+            >
+              EAST
+            </Text>
+          </View>
+        </View>
+        <View
+          className="sc-gsTEea jwzyjw"
+        >
+          <View
+            accessible={true}
+            className="sc-gsTEea jwzyjw"
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "marginTop": 6,
+              }
+            }
+          >
+            <View
+              className="sc-fodVek ceasiC"
+            />
+            <Text
+              style={
+                Object {
+                  "color": "#212121",
+                }
+              }
+            >
+              WEST
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            className="sc-gsTEea jwzyjw"
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "marginTop": 6,
+              }
+            }
+          >
+            <View
+              className="sc-fodVek ceasiC"
+            >
+              <View
+                className="sc-fFucqa cxhKwi"
+              />
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#212121",
+                }
+              }
+            >
+              SOUTH
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 36,
+            "marginLeft": 6,
+            "marginRight": 6,
+            "marginTop": 12,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          className="sc-gKseQn sc-iBPTik bEKjdd lhQWQt"
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+        >
+          <Text
+            className="sc-fubCzh GEpea"
+          >
+            SAVE
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 36,
+            "marginLeft": 6,
+            "marginRight": 6,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          className="sc-gKseQn sc-iBPTik bEKjdd lhQWQt"
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#3D5866",
+            }
+          }
+        >
+          <Text
+            className="sc-fubCzh GEpea"
+          >
+            CANCEL
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</Modal>
+`;
+
+exports[`renders correctly 2`] = `
+<Modal
+  hardwareAccelerated={false}
+  onRequestClose={[Function]}
+  transparent={true}
+  visible={true}
+>
+  <View
+    className="sc-crrszt fWleXe"
+  >
+    <View
+      accessible={true}
+      className="sc-bqyKOL johKCT"
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    />
+    <View
+      className="sc-dQoVA eoKiZr"
+    >
+      <View>
+        <Text
+          className="sc-hBEYId jvKEGi"
+        >
+          X (Col)
+        </Text>
+        <TextInput
+          className="sc-kstqJO QsSFc"
+          keyboardType="number-pad"
+          onChangeText={[Function]}
+          placeholder="X value"
+          value="0"
+        />
+      </View>
+      <View>
+        <Text
+          className="sc-hBEYId jvKEGi"
+        >
+          Y (Row)
+        </Text>
+        <TextInput
+          className="sc-kstqJO QsSFc"
+          keyboardType="number-pad"
+          onChangeText={[Function]}
+          placeholder="Y value"
+          value="0"
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "margin": 12,
+            "marginBottom": 0,
+          }
+        }
+      >
+        <View
+          className="sc-gsTEea jwzyjw"
+        >
+          <View
+            accessible={true}
+            className="sc-gsTEea jwzyjw"
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "marginTop": 6,
+              }
+            }
+          >
+            <View
+              className="sc-fodVek ceasiC"
+            />
+            <Text
+              style={
+                Object {
+                  "color": "#212121",
+                }
+              }
+            >
+              NORTH
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            className="sc-gsTEea jwzyjw"
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "marginTop": 6,
+              }
+            }
+          >
+            <View
+              className="sc-fodVek ceasiC"
+            />
+            <Text
+              style={
+                Object {
+                  "color": "#212121",
+                }
+              }
+            >
+              EAST
+            </Text>
+          </View>
+        </View>
+        <View
+          className="sc-gsTEea jwzyjw"
+        >
+          <View
+            accessible={true}
+            className="sc-gsTEea jwzyjw"
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "marginTop": 6,
+              }
+            }
+          >
+            <View
+              className="sc-fodVek ceasiC"
+            />
+            <Text
+              style={
+                Object {
+                  "color": "#212121",
+                }
+              }
+            >
+              WEST
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            className="sc-gsTEea jwzyjw"
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "marginTop": 6,
+              }
+            }
+          >
+            <View
+              className="sc-fodVek ceasiC"
+            >
+              <View
+                className="sc-fFucqa cxhKwi"
+              />
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#212121",
+                }
+              }
+            >
+              SOUTH
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 36,
+            "marginLeft": 6,
+            "marginRight": 6,
+            "marginTop": 12,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          className="sc-gKseQn sc-iBPTik bEKjdd lhQWQt"
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+        >
+          <Text
+            className="sc-fubCzh GEpea"
+          >
+            SAVE
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 36,
+            "marginLeft": 6,
+            "marginRight": 6,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          className="sc-gKseQn sc-iBPTik bEKjdd lhQWQt"
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#3D5866",
+            }
+          }
+        >
+          <Text
+            className="sc-fubCzh GEpea"
+          >
+            CANCEL
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</Modal>
+`;

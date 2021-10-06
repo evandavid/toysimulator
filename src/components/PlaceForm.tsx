@@ -52,6 +52,7 @@ const PlaceForm = ({visible, onRequestClose, onSubmit}: PlaceFormProps) => {
           <View>
             <Label>X (Col)</Label>
             <Input
+              placeholder="X value"
               keyboardType="number-pad"
               value={String(form.col)}
               onChangeText={value => {
@@ -69,6 +70,7 @@ const PlaceForm = ({visible, onRequestClose, onSubmit}: PlaceFormProps) => {
           <View>
             <Label>Y (Row)</Label>
             <Input
+              placeholder="Y value"
               keyboardType="number-pad"
               value={String(form.row)}
               onChangeText={value => {
@@ -91,7 +93,7 @@ const PlaceForm = ({visible, onRequestClose, onSubmit}: PlaceFormProps) => {
                 }}>
                 <Row style={{flex: 1, marginTop: 6}}>
                   <Radio selected={form.f === 'NORTH'} />
-                  <Text style={{color: ' #212121'}}>NORTH</Text>
+                  <Text style={{color: '#212121'}}>NORTH</Text>
                 </Row>
               </TouchableWithoutFeedback>
               <TouchableWithoutFeedback
@@ -100,7 +102,7 @@ const PlaceForm = ({visible, onRequestClose, onSubmit}: PlaceFormProps) => {
                 }}>
                 <Row style={{flex: 1, marginTop: 6}}>
                   <Radio selected={form.f === 'EAST'} />
-                  <Text style={{color: ' #212121'}}>EAST</Text>
+                  <Text style={{color: '#212121'}}>EAST</Text>
                 </Row>
               </TouchableWithoutFeedback>
             </Row>
@@ -111,7 +113,7 @@ const PlaceForm = ({visible, onRequestClose, onSubmit}: PlaceFormProps) => {
                 }}>
                 <Row style={{flex: 1, marginTop: 6}}>
                   <Radio selected={form.f === 'WEST'} />
-                  <Text style={{color: ' #212121'}}>WEST</Text>
+                  <Text style={{color: '#212121'}}>WEST</Text>
                 </Row>
               </TouchableWithoutFeedback>
               <TouchableWithoutFeedback
@@ -120,7 +122,7 @@ const PlaceForm = ({visible, onRequestClose, onSubmit}: PlaceFormProps) => {
                 }}>
                 <Row style={{flex: 1, marginTop: 6}}>
                   <Radio selected={form.f === 'SOUTH'} />
-                  <Text style={{color: ' #212121'}}>SOUTH</Text>
+                  <Text style={{color: '#212121'}}>SOUTH</Text>
                 </Row>
               </TouchableWithoutFeedback>
             </Row>

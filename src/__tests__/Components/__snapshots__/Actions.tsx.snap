@@ -1,0 +1,321 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "height": 105,
+    }
+  }
+>
+  <View
+    className="sc-gsTEea jwzyjw"
+  >
+    <View
+      accessible={true}
+      className="sc-gKseQn bEKjdd"
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        className="sc-fubCzh GEpea"
+      >
+        PLACE
+      </Text>
+    </View>
+    <View
+      accessibilityState={
+        Object {
+          "disabled": true,
+        }
+      }
+      accessible={true}
+      className="sc-gKseQn cDVuzZ"
+      disabled={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        className="sc-fubCzh GEpea"
+      >
+        MOVE
+      </Text>
+    </View>
+  </View>
+  <View
+    className="sc-gsTEea jwzyjw"
+  >
+    <View
+      accessibilityState={
+        Object {
+          "disabled": true,
+        }
+      }
+      accessible={true}
+      className="sc-gKseQn cDVuzZ"
+      disabled={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        className="sc-fubCzh GEpea"
+      >
+        LEFT
+      </Text>
+    </View>
+    <View
+      accessibilityState={
+        Object {
+          "disabled": true,
+        }
+      }
+      accessible={true}
+      className="sc-gKseQn cDVuzZ"
+      disabled={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        className="sc-fubCzh GEpea"
+      >
+        RIGHT
+      </Text>
+    </View>
+  </View>
+  <View
+    className="sc-gsTEea jwzyjw"
+  >
+    <View
+      accessibilityState={
+        Object {
+          "disabled": true,
+        }
+      }
+      accessible={true}
+      className="sc-gKseQn cDVuzZ"
+      disabled={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        className="sc-fubCzh GEpea"
+      >
+        REPORT
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      className="sc-gKseQn bEKjdd"
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#3D5866",
+        }
+      }
+    >
+      <Text
+        className="sc-fubCzh GEpea"
+      >
+        CLEAR
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders correctly 2`] = `
+<View
+  style={
+    Object {
+      "height": 105,
+    }
+  }
+>
+  <View
+    className="sc-gsTEea jwzyjw"
+  >
+    <View
+      accessible={true}
+      className="sc-gKseQn bEKjdd"
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        className="sc-fubCzh GEpea"
+      >
+        PLACE
+      </Text>
+    </View>
+    <View
+      accessibilityState={
+        Object {
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      className="sc-gKseQn bEKjdd"
+      disabled={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        className="sc-fubCzh GEpea"
+      >
+        MOVE
+      </Text>
+    </View>
+  </View>
+  <View
+    className="sc-gsTEea jwzyjw"
+  >
+    <View
+      accessibilityState={
+        Object {
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      className="sc-gKseQn bEKjdd"
+      disabled={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        className="sc-fubCzh GEpea"
+      >
+        LEFT
+      </Text>
+    </View>
+    <View
+      accessibilityState={
+        Object {
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      className="sc-gKseQn bEKjdd"
+      disabled={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        className="sc-fubCzh GEpea"
+      >
+        RIGHT
+      </Text>
+    </View>
+  </View>
+  <View
+    className="sc-gsTEea jwzyjw"
+  >
+    <View
+      accessibilityState={
+        Object {
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      className="sc-gKseQn bEKjdd"
+      disabled={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        className="sc-fubCzh GEpea"
+      >
+        REPORT
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      className="sc-gKseQn bEKjdd"
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#3D5866",
+        }
+      }
+    >
+      <Text
+        className="sc-fubCzh GEpea"
+      >
+        CLEAR
+      </Text>
+    </View>
+  </View>
+</View>
+`;

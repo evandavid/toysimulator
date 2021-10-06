@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View>
+  <View>
+    <Text
+      className="sc-hKgJUU gfmGt"
+    >
+      &gt;&gt;
+       
+      PLACE
+       
+      0, 0, EAST
+    </Text>
+  </View>
+</View>
+`;
